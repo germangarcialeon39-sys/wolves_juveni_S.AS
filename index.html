@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wolves Juvenil S.A.S | Escuela de Fútbol en Bogotá</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FFF8DC',
+                            300: '#F3E5AB',
+                            400: '#E6CA65',
+                            500: '#D4AF37',
+                            600: '#B8860B',
+                            700: '#996515',
+                            800: '#664610'
+                        },
+                        dark: {
+                            950: '#08090C',
+                            900: '#0D0F14',
+                            800: '#141821',
+                            700: '#1F2430'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #08090C;
+            color: #F3F4F6;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF8DC 0%, #D4AF37 50%, #AA771C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+        }
+        .gold-border-glow:hover {
+            border-color: rgba(212, 175, 55, 0.7);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #E6CA65 0%, #D4AF37 50%, #996515 100%);
+        }
+        .gold-bg-gradient:hover {
+            background: linear-gradient(135deg, #FFF8DC 0%, #E6CA65 50%, #B8860B 100%);
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-dark-950">
+
+    <!-- Header & Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <div class="relative w-12 h-12 flex items-center justify-center">
+                    <!-- Embedded SVG Replica of Logo Badge -->
+                    <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]">
+                        <path d="M100 10 L170 40 L160 140 L100 185 L40 140 L30 40 Z" fill="#0D0F14" stroke="#D4AF37" stroke-width="6"/>
+                        <path d="M100 20 L160 46 L150 132 L100 172 L50 132 L40 46 Z" fill="#141821" stroke="#AA771C" stroke-width="2"/>
+                        <!-- Stylized Wolf Head -->
+                        <polygon points="100,45 120,75 145,65 130,105 100,135 70,105 55,65 80,75" fill="#D4AF37"/>
+                        <polygon points="100,55 115,80 130,100 100,125 70,100 85,80" fill="#08090C"/>
+                        <circle cx="85" cy="80" r="4" fill="#FFD700"/>
+                        <circle cx="115" cy="80" r="4" fill="#FFD700"/>
+                        <!-- Soccer ball icon at bottom -->
+                        <circle cx="100" cy="155" r="12" fill="#FFF8DC" stroke="#0D0F14" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-wider text-white block leading-none font-heading">WOLVES <span class="gold-gradient-text">JUVENIL</span></span>
+                    <span class="text-[10px] tracking-widest text-gold-400 font-semibold uppercase">Escuela de Fútbol S.A.S</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-7 font-medium text-sm text-slate-300">
+                <a href="#inicio" class="hover:text-gold-400 transition-colors">Inicio</a>
+                <a href="#nosotros" class="hover:text-gold-400 transition-colors">Nosotros</a>
+                <a href="#servicios" class="hover:text-gold-400 transition-colors">Servicios</a>
+                <a href="#categorias" class="hover:text-gold-400 transition-colors">Categorías</a>
+                <a href="#gif" class="hover:text-gold-400 transition-colors">GIF</a>
+                <a href="#contacto" class="hover:text-gold-400 transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://wa.me/573222189471?text=Hola,%20deseo%20recibir%20información%20para%20inscribirme%20en%20Wolves%20Juvenil" target="_blank" class="px-5 py-2.5 rounded-xl gold-bg-gradient text-dark-950 font-bold text-sm shadow-lg shadow-gold-500/20 hover:scale-105 transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Inscripción WhatsApp
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" aria-label="Abrir menú" class="lg:hidden p-2 rounded-xl border border-gold-500/30 text-gold-400 hover:bg-dark-800 transition-colors">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-dark-900 border-b border-gold-500/30 px-6 py-6 space-y-4 shadow-2xl">
+            <a href="#inicio" class="block text-base font-semibold text-slate-200 hover:text-gold-400 mobile-link">Inicio</a>
+            <a href="#nosotros" class="block text-base font-semibold text-slate-200 hover:text-gold-400 mobile-link">Nosotros</a>
+            <a href="#servicios" class="block text-base font-semibold text-slate-200 hover:text-gold-400 mobile-link">Servicios</a>
+            <a href="#categorias" class="block text-base font-semibold text-slate-200 hover:text-gold-400 mobile-link">Categorías</a>
+            <a href="#gif" class="block text-base font-semibold text-slate-200 hover:text-gold-400 mobile-link">GIF</a>
+            <a href="#contacto" class="block text-base font-semibold text-slate-200 hover:text-gold-400 mobile-link">Contacto</a>
+            <div class="pt-4 border-t border-dark-700">
+                <a href="https://wa.me/573222189471" target="_blank" class="block text-center w-full py-3 rounded-xl gold-bg-gradient text-dark-950 font-bold shadow-md shadow-gold-500/20 mobile-link">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Chatear por WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950 bg-grid-pattern">
+            <!-- Decorative Glow Elements -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -z-10 w-[600px] h-[600px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+            <div class="absolute top-10 right-10 -z-10 w-80 h-80 bg-gold-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Text Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-800 border border-gold-500/40 text-gold-400 text-xs sm:text-sm font-bold tracking-wide uppercase">
+                            <i class="fa-solid fa-shield-halved text-gold-400"></i> Formación Deportiva de Alto Nivel
+                        </div>
+
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-none uppercase font-heading">
+                            Wolves <span class="gold-gradient-text block mt-1">Juvenil S.A.S</span>
+                        </h1>
+
+                        <!-- Slogan Banner -->
+                        <div class="p-4 rounded-2xl bg-dark-800/80 border-l-4 border-gold-500 backdrop-blur-sm max-w-2xl mx-auto lg:mx-0">
+                            <p class="text-xl sm:text-2xl font-bold italic gold-gradient-text">
+                                "Forjando talento, liderando el futuro."
+                            </p>
+                        </div>
+
+                        <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Escuela de formación integral en fútbol para niños, niñas y jóvenes de <span class="text-gold-400 font-semibold">5 a 19 años</span> en Bogotá. Entrenamientos estructurados, disciplinas, valores y proyección competitiva en la localidad de Suba (Bilbao).
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl gold-bg-gradient text-dark-950 font-extrabold text-base shadow-xl shadow-gold-500/20 hover:scale-105 transition-all text-center">
+                                Inscripciones Abiertas <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-dark-800 hover:bg-dark-700 text-slate-200 border border-gold-500/30 font-bold text-base transition-all text-center">
+                                Explorar Programas
+                            </a>
+                        </div>
+
+                        <!-- Highlights Banner -->
+                        <div class="pt-8 border-t border-dark-700/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
+                            <div class="p-3 rounded-xl bg-dark-900/60 border border-dark-700">
+                                <span class="text-2xl font-black text-gold-400 block font-heading">5 a 19</span>
+                                <span class="text-xs text-slate-400 font-medium">Años (Rama Masculina y Femenina)</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-dark-900/60 border border-dark-700">
+                                <span class="text-2xl font-black text-gold-400 block font-heading">3 Sesiones</span>
+                                <span class="text-xs text-slate-400 font-medium">Semanales de 90 min</span>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1 p-3 rounded-xl bg-dark-900/60 border border-dark-700">
+                                <span class="text-2xl font-black text-gold-400 block font-heading">Suba</span>
+                                <span class="text-xs text-slate-400 font-medium">Sede Principal Bilbao</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Visual Shield Presentation -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none p-8 rounded-3xl bg-gradient-to-b from-dark-800 to-dark-900 gold-border-glow text-center overflow-hidden">
+                            
+                            <div class="absolute -top-10 -right-10 w-40 h-40 bg-gold-500/10 rounded-full blur-2xl"></div>
+
+                            <!-- Big Logo SVG -->
+                            <div class="w-64 h-64 mx-auto mb-6 relative">
+                                <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]">
+                                    <!-- Shield Outer -->
+                                    <path d="M100 10 L170 40 L160 140 L100 185 L40 140 L30 40 Z" fill="#0D0F14" stroke="#D4AF37" stroke-width="5"/>
+                                    <path d="M100 20 L160 46 L150 132 L100 172 L50 132 L40 46 Z" fill="#141821" stroke="#AA771C" stroke-width="2"/>
+                                    
+                                    <!-- Wolf Head Graphic -->
+                                    <g transform="translate(0, -5)">
+                                        <polygon points="100,40 125,75 150,65 135,110 100,140 65,110 50,65 75,75" fill="#D4AF37"/>
+                                        <polygon points="100,52 118,80 132,102 100,128 68,102 82,80" fill="#08090C"/>
+                                        <polygon points="100,60 110,80 120,95 100,115 80,95 90,80" fill="#1F2430"/>
+                                        <!-- Eyes -->
+                                        <polygon points="80,78 92,82 85,86" fill="#FFD700"/>
+                                        <polygon points="120,78 108,82 115,86" fill="#FFD700"/>
+                                        <circle cx="86" cy="81" r="1.5" fill="#08090C"/>
+                                        <circle cx="114" cy="81" r="1.5" fill="#08090C"/>
+                                        <!-- Snout -->
+                                        <polygon points="100,95 105,108 95,108" fill="#D4AF37"/>
+                                    </g>
+
+                                    <!-- Banner Text -->
+                                    <rect x="35" y="125" width="130" height="26" rx="4" fill="#08090C" stroke="#D4AF37" stroke-width="1.5"/>
+                                    <text x="100" y="142" font-family="'Outfit', sans-serif" font-weight="900" font-size="14" fill="#FFF8DC" text-anchor="middle" letter-spacing="2">WOLVES</text>
+                                    <text x="100" y="160" font-family="'Outfit', sans-serif" font-weight="700" font-size="9" fill="#D4AF37" text-anchor="middle" letter-spacing="3">JUVENIL</text>
+                                    
+                                    <!-- Soccer Ball -->
+                                    <circle cx="100" cy="172" r="8" fill="#FFF8DC" stroke="#08090C" stroke-width="1.5"/>
+                                    <path d="M100 167 L102 170 L100 173 L98 170 Z" fill="#08090C"/>
+                                </svg>
+                            </div>
+
+                            <h3 class="text-2xl font-black text-white uppercase font-heading">Sede Suba Bilbao</h3>
+                            <p class="text-xs text-gold-400 font-semibold uppercase tracking-widest mt-1">Bogotá D.C. - Colombia</p>
+                            
+                            <div class="mt-6 pt-6 border-t border-dark-700/80 flex justify-center items-center gap-6 text-slate-300 text-sm">
+                                <div>
+                                    <i class="fa-solid fa-user-shield text-gold-500 mb-1 block text-lg"></i>
+                                    <span>Espacio Seguro</span>
+                                </div>
+                                <div class="w-px h-8 bg-dark-700"></div>
+                                <div>
+                                    <i class="fa-solid fa-award text-gold-500 mb-1 block text-lg"></i>
+                                    <span>Alta Calidad</span>
+                                </div>
+                                <div class="w-px h-8 bg-dark-700"></div>
+                                <div>
+                                    <i class="fa-solid fa-users text-gold-500 mb-1 block text-lg"></i>
+                                    <span>Inclusivo</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Institutional Section (Nosotros: Misión, Visión & Valores) -->
+        <section id="nosotros" class="py-24 bg-dark-900 relative border-t border-gold-500/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gold-400 px-4 py-1.5 rounded-full bg-dark-800 border border-gold-500/30">Identidad Institucional</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-white uppercase font-heading">Nuestra Esencia y Compromiso</h2>
+                    <p class="text-slate-400 text-base">En Wolves Juvenil S.A.S formamos personas integrales preparadas para triunfar tanto en la cancha como en la vida.</p>
+                </div>
+
+                <!-- Mission & Vision Cards -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                    
+                    <!-- Misión Card -->
+                    <div class="p-8 sm:p-10 rounded-3xl bg-dark-800 border border-gold-500/20 hover:border-gold-500/50 transition-all shadow-xl relative overflow-hidden group">
+                        <div class="w-16 h-16 rounded-2xl gold-bg-gradient text-dark-950 flex items-center justify-center text-3xl font-black mb-6 shadow-lg shadow-gold-500/20">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4 font-heading uppercase tracking-wide flex items-center gap-3">
+                            Misión
+                        </h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            En <strong class="text-gold-400">Wolves Juvenil</strong> trabajamos para formar integralmente a niños y jóvenes a través del fútbol, brindando espacios seguros, inclusivos y de alta calidad donde puedan desarrollar sus habilidades deportivas, fortalecer sus valores y construir hábitos de disciplina, responsabilidad y trabajo en equipo. Nuestro compromiso es contribuir al crecimiento personal, académico y deportivo de cada jugador, acompañándolo en su proceso de formación dentro y fuera de la cancha.
+                        </p>
+                    </div>
+
+                    <!-- Visión Card -->
+                    <div class="p-8 sm:p-10 rounded-3xl bg-dark-800 border border-gold-500/20 hover:border-gold-500/50 transition-all shadow-xl relative overflow-hidden group">
+                        <div class="w-16 h-16 rounded-2xl gold-bg-gradient text-dark-950 flex items-center justify-center text-3xl font-black mb-6 shadow-lg shadow-gold-500/20">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4 font-heading uppercase tracking-wide flex items-center gap-3">
+                            Visión <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold-500/10 text-gold-400 border border-gold-500/30">Meta 2030</span>
+                        </h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Para el año <strong class="text-gold-400">2030</strong>, Wolves Juvenil será reconocida como una de las escuelas de formación deportiva más destacadas de Bogotá, caracterizada por la excelencia de sus procesos de entrenamiento, el desarrollo integral de sus deportistas y su impacto positivo en la comunidad. Aspiramos a ser un referente en la formación de talento deportivo, promoviendo valores, oportunidades de crecimiento y experiencias que inspiren a niños y jóvenes a alcanzar sus metas personales y futbolísticas.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Valores Corporativos -->
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-center text-white font-heading uppercase tracking-wide mb-8">
+                        Valores Corporativos
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                        
+                        <!-- Valor 1 -->
+                        <div class="p-6 rounded-2xl bg-dark-800/80 border border-dark-700 hover:border-gold-500/40 transition-all text-center group">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-dark-700 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-gold-500 group-hover:text-dark-950 transition-all">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2 font-heading">Disciplina</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Promovemos el cumplimiento responsable de las actividades deportivas y administrativas.
+                            </p>
+                        </div>
+
+                        <!-- Valor 2 -->
+                        <div class="p-6 rounded-2xl bg-dark-800/80 border border-dark-700 hover:border-gold-500/40 transition-all text-center group">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-dark-700 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-gold-500 group-hover:text-dark-950 transition-all">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2 font-heading">Respeto</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Fomentamos relaciones basadas en la tolerancia y la sana convivencia.
+                            </p>
+                        </div>
+
+                        <!-- Valor 3 -->
+                        <div class="p-6 rounded-2xl bg-dark-800/80 border border-dark-700 hover:border-gold-500/40 transition-all text-center group">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-dark-700 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-gold-500 group-hover:text-dark-950 transition-all">
+                                <i class="fa-solid fa-shield-cat"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2 font-heading">Responsabilidad</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Cumplimiento de obligaciones y cuidado de los recursos, espacios y personas.
+                            </p>
+                        </div>
+
+                        <!-- Valor 4 -->
+                        <div class="p-6 rounded-2xl bg-dark-800/80 border border-dark-700 hover:border-gold-500/40 transition-all text-center group">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-dark-700 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-gold-500 group-hover:text-dark-950 transition-all">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2 font-heading">Compromiso</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Trabajamos constantemente para alcanzar los objetivos institucionales.
+                            </p>
+                        </div>
+
+                        <!-- Valor 5 -->
+                        <div class="p-6 rounded-2xl bg-dark-800/80 border border-dark-700 hover:border-gold-500/40 transition-all text-center group sm:col-span-2 lg:col-span-1">
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-dark-700 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-gold-500 group-hover:text-dark-950 transition-all">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2 font-heading">Trabajo en Equipo</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Impulsamos la colaboración entre jugadores, entrenadores y familias.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GIF / Video Section -->
+        <section id="gif" class="py-20 bg-dark-950 relative border-t border-gold-500/20 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gold-400 px-4 py-1.5 rounded-full bg-dark-800 border border-gold-500/30">
+                        <i class="fa-solid fa-film mr-1"></i> Galería audiovisual
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-white uppercase font-heading">GIF</h2>
+                    <p class="text-slate-400 text-base">Mira este momento de Wolves Juvenil S.A.S.</p>
+                </div>
+
+                <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden bg-dark-900 border-2 border-gold-500/40 shadow-2xl shadow-gold-500/10">
+                    <video class="w-full h-auto max-h-[650px] object-contain bg-black"
+                           controls playsinline preload="metadata">
+                        <source src="video-wolves.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                    <div class="p-4 bg-dark-900 border-t border-gold-500/20 text-center">
+                        <p class="text-xs text-gold-400 font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-star mr-1"></i> Wolves Juvenil S.A.S.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Programas y Servicios Detallados) -->
+        <section id="servicios" class="py-24 bg-dark-950 relative border-t border-gold-500/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gold-400 px-4 py-1.5 rounded-full bg-dark-800 border border-gold-500/30">Portafolio Oficial</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-white uppercase font-heading">Servicios y Programas</h2>
+                    <p class="text-slate-400 text-base">Estructura pedagógica y deportiva completa adaptable a cada etapa de desarrollo.</p>
+                </div>
+
+                <!-- Interactive Tabs Navigation for Services -->
+                <div class="flex flex-wrap justify-center gap-2 mb-12">
+                    <button class="service-tab-btn active px-5 py-3 rounded-xl font-bold text-sm bg-gold-500 text-dark-950 shadow-lg shadow-gold-500/20 transition-all" data-target="service-1">
+                        <i class="fa-solid fa-futbol mr-2"></i> Formación Deportiva
+                    </button>
+                    <button class="service-tab-btn px-5 py-3 rounded-xl font-bold text-sm bg-dark-800 text-slate-300 hover:bg-dark-700 border border-dark-700 transition-all" data-target="service-2">
+                        <i class="fa-solid fa-trophy mr-2"></i> Torneos y Competencias
+                    </button>
+                    <button class="service-tab-btn px-5 py-3 rounded-xl font-bold text-sm bg-dark-800 text-slate-300 hover:bg-dark-700 border border-dark-700 transition-all" data-target="service-3">
+                        <i class="fa-solid fa-sun mr-2"></i> Vacacionales
+                    </button>
+                    <button class="service-tab-btn px-5 py-3 rounded-xl font-bold text-sm bg-dark-800 text-slate-300 hover:bg-dark-700 border border-dark-700 transition-all" data-target="service-4">
+                        <i class="fa-solid fa-user-ninja mr-2"></i> Personalizado
+                    </button>
+                    <button class="service-tab-btn px-5 py-3 rounded-xl font-bold text-sm bg-dark-800 text-slate-300 hover:bg-dark-700 border border-dark-700 transition-all" data-target="service-5">
+                        <i class="fa-solid fa-child-reaching mr-2"></i> Acondicionamiento Físico
+                    </button>
+                </div>
+
+                <!-- Tab Content Containers -->
+                <div class="bg-dark-900 rounded-3xl p-6 sm:p-10 border border-gold-500/20 shadow-2xl">
+                    
+                    <!-- SERVICE 1 -->
+                    <div id="service-1" class="service-content-block space-y-8">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-dark-700 pb-6">
+                            <div>
+                                <span class="text-xs font-semibold uppercase text-gold-400 tracking-wider">Programa Base Continuo</span>
+                                <h3 class="text-2xl sm:text-3xl font-black text-white font-heading uppercase mt-1">Formación Deportiva y Entrenamiento</h3>
+                            </div>
+                            <a href="#contacto" class="inline-flex items-center justify-center px-6 py-3 rounded-xl gold-bg-gradient text-dark-950 font-bold text-sm">
+                                Solicitar Inscripción <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-users mr-2"></i>Público Objetivo</h4>
+                                <p class="text-slate-200">Niños, niñas y jóvenes de <strong>5 a 19 años</strong>. Grupos organizados por edades (5–8, 9–13 y 14–19 años) bajo evaluación técnica.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-clock mr-2"></i>Duración y Frecuencia</h4>
+                                <p class="text-slate-200">Plan mensual continuo. <strong>3 sesiones semanales de 90 minutos</strong> cada una con horarios por categoría.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-location-dot mr-2"></i>Modalidad y Lugar</h4>
+                                <p class="text-slate-200">Presencial en escenario deportivo formalizado en <strong>Suba (Prioridad Bilbao)</strong>.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700 md:col-span-2 lg:col-span-2">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-list-check mr-2"></i>Contenido de la Sesión</h4>
+                                <p class="text-slate-300">Calentamiento, ejercicios técnicos, trabajo táctico acorde con la edad, juegos aplicados, vuelta a la calma y registro breve de asistencia o novedades.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-user-tie mr-2"></i>Responsable</h4>
+                                <p class="text-slate-200">Coordinación deportiva y entrenador asignado a cada grupo.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-dark-950 border border-gold-500/20 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-300">
+                            <div>
+                                <span class="text-gold-400 font-bold block mb-1">Recursos de Apoyo:</span>
+                                Cancha, balones, petos, conos, kit deportivo/uniforme, hidratación y elementos de protección.
+                            </div>
+                            <div>
+                                <span class="text-gold-400 font-bold block mb-1">Criterios de Calidad:</span>
+                                Asistencia, cumplimiento de sesiones programadas, seguimiento del progreso y satisfacción de las familias.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SERVICE 2 -->
+                    <div id="service-2" class="service-content-block space-y-8 hidden">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-dark-700 pb-6">
+                            <div>
+                                <span class="text-xs font-semibold uppercase text-gold-400 tracking-wider">Competencia Oficial</span>
+                                <h3 class="text-2xl sm:text-3xl font-black text-white font-heading uppercase mt-1">Participación en Torneos y Competencias</h3>
+                            </div>
+                            <a href="#contacto" class="inline-flex items-center justify-center px-6 py-3 rounded-xl gold-bg-gradient text-dark-950 font-bold text-sm">
+                                Consultar Competencias <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-bullseye mr-2"></i>Descripción</h4>
+                                <p class="text-slate-200">Servicio de preparación, inscripción y acompañamiento en competencias deportivas seleccionadas.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-crosshairs mr-2"></i>Objetivo Técnico</h4>
+                                <p class="text-slate-200">Aplicar aprendizajes en contextos competitivos, fortaleciendo el juego limpio, la disciplina y el trabajo en equipo.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-map-location-dot mr-2"></i>Lugar y Sede</h4>
+                                <p class="text-slate-200">Presencial en los escenarios y sedes designadas por la organización de cada torneo externo.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-dark-950 border border-gold-500/20 space-y-3 text-xs text-slate-300">
+                            <p><strong class="text-gold-400">Contenido incluido:</strong> Selección de la competencia, preparación previa, gestión de inscripción, orientación a deportistas y acudientes, acompañamiento técnico durante partidos y cierre evaluativo del evento.</p>
+                            <p><strong class="text-gold-400">Condiciones:</strong> Requiere autorización formal del acudiente y cumplimiento estricto del reglamento interno de convivencia.</p>
+                        </div>
+                    </div>
+
+                    <!-- SERVICE 3 -->
+                    <div id="service-3" class="service-content-block space-y-8 hidden">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-dark-700 pb-6">
+                            <div>
+                                <span class="text-xs font-semibold uppercase text-gold-400 tracking-wider">Temporada de Receso</span>
+                                <h3 class="text-2xl sm:text-3xl font-black text-white font-heading uppercase mt-1">Programas Vacacionales</h3>
+                            </div>
+                            <a href="#contacto" class="inline-flex items-center justify-center px-6 py-3 rounded-xl gold-bg-gradient text-dark-950 font-bold text-sm">
+                                Reservar Cupo <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-calendar-days mr-2"></i>Duración</h4>
+                                <p class="text-slate-200"><strong>2 Semanas</strong> (6 sesiones intensivas de 90 min en total), con 3 sesiones semanales.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-smile-beam mr-2"></i>Objetivo</h4>
+                                <p class="text-slate-200">Aprovechar el periodo vacacional para practicar fútbol, fortalecer habilidades básicas y fomentar recreación y hábitos saludables.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-gift mr-2"></i>Recursos Incluidos</h4>
+                                <p class="text-slate-200">Escenario deportivo en Suba/Bilbao, kits deportivos, hidratación, refrigerio y seguro previsto.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SERVICE 4 -->
+                    <div id="service-4" class="service-content-block space-y-8 hidden">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-dark-700 pb-6">
+                            <div>
+                                <span class="text-xs font-semibold uppercase text-gold-400 tracking-wider">Atención Individualizada</span>
+                                <h3 class="text-2xl sm:text-3xl font-black text-white font-heading uppercase mt-1">Entrenamiento Personalizado</h3>
+                            </div>
+                            <a href="#contacto" class="inline-flex items-center justify-center px-6 py-3 rounded-xl gold-bg-gradient text-dark-950 font-bold text-sm">
+                                Agendar Evaluación <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-bullseye mr-2"></i>Enfoque Específico</h4>
+                                <p class="text-slate-200">Sesiones individuales o en grupos reducidos para deportistas que requieren perfeccionar habilidades técnicas o condición física a la medida.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-stopwatch mr-2"></i>Duración y Agendamiento</h4>
+                                <p class="text-slate-200">Sesiones individuales de <strong>60 minutos</strong>. Frecuencia concertada según disponibilidad y evaluación técnica previa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SERVICE 5 -->
+                    <div id="service-5" class="service-content-block space-y-8 hidden">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-dark-700 pb-6">
+                            <div>
+                                <span class="text-xs font-semibold uppercase text-gold-400 tracking-wider">Potenciamiento Atlético</span>
+                                <h3 class="text-2xl sm:text-3xl font-black text-white font-heading uppercase mt-1">Acondicionamiento Físico Deportivo</h3>
+                            </div>
+                            <a href="#contacto" class="inline-flex items-center justify-center px-6 py-3 rounded-xl gold-bg-gradient text-dark-950 font-bold text-sm">
+                                Iniciar Plan <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-dumbbell mr-2"></i>Plan Mensual</h4>
+                                <p class="text-slate-200"><strong>2 sesiones semanales de 60 minutos</strong>. Desarrollo de agilidad, movilidad, resistencia y fuerza adaptada.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-shield-heart mr-2"></i>Práctica Segura</h4>
+                                <p class="text-slate-200">Desarrollo progresivo de capacidades sin sobrecargas físicas y con control de intensidad por edad.</p>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-dark-800 border border-dark-700">
+                                <h4 class="text-gold-400 font-bold uppercase text-xs tracking-wider mb-2"><i class="fa-solid fa-cubes mr-2"></i>Materiales</h4>
+                                <p class="text-slate-200">Bandas elásticas, conos de agilidad, implementos de coordinación e hidratación supervisada.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Categories & Age Groups Section -->
+        <section id="categorias" class="py-24 bg-dark-900 relative border-t border-gold-500/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gold-400 px-4 py-1.5 rounded-full bg-dark-800 border border-gold-500/30">Grupos de Entrenamiento</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-white uppercase font-heading">Categorías por Edades</h2>
+                    <p class="text-slate-400 text-base">Organización metodológica evaluada por la Coordinación Deportiva para garantizar el mejor aprendizaje.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Category 1 -->
+                    <div class="p-8 rounded-3xl bg-dark-800 border border-gold-500/20 hover:border-gold-500 transition-all shadow-xl group">
+                        <div class="inline-block px-3 py-1 rounded-lg bg-gold-500/10 text-gold-400 font-bold text-xs uppercase mb-4">
+                            Semillero
+                        </div>
+                        <h3 class="text-3xl font-black text-white font-heading mb-2">5 a 8 Años</h3>
+                        <p class="text-slate-400 text-sm mb-6">Iniciación deportiva, psicomotricidad, coordinación básica y juegos adaptados para el gusto por el fútbol.</p>
+                        <ul class="space-y-2 text-xs text-slate-300 border-t border-dark-700 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Formación motriz básica</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Trabajo en valores sociales</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Ambiente seguro y divertido</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div class="p-8 rounded-3xl bg-dark-800 border border-gold-500/50 hover:border-gold-500 transition-all shadow-2xl relative group">
+                        <div class="absolute -top-3 right-6 px-3 py-1 rounded-full gold-bg-gradient text-dark-950 font-black text-[10px] uppercase">
+                            Más Popular
+                        </div>
+                        <div class="inline-block px-3 py-1 rounded-lg bg-gold-500/10 text-gold-400 font-bold text-xs uppercase mb-4">
+                            Desarrollo
+                        </div>
+                        <h3 class="text-3xl font-black text-white font-heading mb-2">9 a 13 Años</h3>
+                        <p class="text-slate-400 text-sm mb-6">Fundamentación técnica (pase, control, conducción) y conceptos tácticos elementales de juego colectivo.</p>
+                        <ul class="space-y-2 text-xs text-slate-300 border-t border-dark-700 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Perfeccionamiento de técnica individual</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Iniciación al contexto competitivo</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Hábitos de disciplina deportiva</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div class="p-8 rounded-3xl bg-dark-800 border border-gold-500/20 hover:border-gold-500 transition-all shadow-xl group">
+                        <div class="inline-block px-3 py-1 rounded-lg bg-gold-500/10 text-gold-400 font-bold text-xs uppercase mb-4">
+                            Juvenil & Alto Rendimiento
+                        </div>
+                        <h3 class="text-3xl font-black text-white font-heading mb-2">14 a 19 Años</h3>
+                        <p class="text-slate-400 text-sm mb-6">Táctica avanzada, acondicionamiento físico especializado, toma de decisiones y competencia de alto nivel.</p>
+                        <ul class="space-y-2 text-xs text-slate-300 border-t border-dark-700 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Preparación para torneos oficiales</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Sistemas de juego y táctica aplicada</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Liderazgo y proyección futura</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact & Pre-Registration Section -->
+        <section id="contacto" class="py-24 bg-dark-950 relative overflow-hidden border-t border-gold-500/20">
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Direct Contact Channels -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-400 px-4 py-1.5 rounded-full bg-dark-800 border border-gold-500/30">Inscripciones & Atención</span>
+                            <h2 class="text-3xl sm:text-5xl font-black text-white uppercase font-heading mt-4">Únete a la Manada</h2>
+                            <p class="text-slate-400 text-sm sm:text-base leading-relaxed mt-2">
+                                Estamos listos para recibir a los nuevos talentos. Contáctanos directamente a través de nuestros canales oficiales.
+                            </p>
+                        </div>
+
+                        <!-- Contact Cards -->
+                        <div class="space-y-4">
+                            
+                            <!-- WhatsApp Direct Callout -->
+                            <a href="https://wa.me/573222189471?text=Hola!%20Quiero%20más%20información%20sobre%20Wolves%20Juvenil" target="_blank" class="flex items-center gap-4 p-5 rounded-2xl bg-dark-900 border border-gold-500/30 hover:border-gold-500 transition-all group">
+                                <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl group-hover:bg-emerald-500 group-hover:text-dark-950 transition-colors">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 uppercase font-semibold block">Línea Directa / WhatsApp</span>
+                                    <span class="text-lg font-bold text-white group-hover:text-gold-400 transition-colors">322 218 9471</span>
+                                </div>
+                            </a>
+
+                            <!-- Email Card -->
+                            <a href="mailto:Wolves.Juvenil25@gmail.com" class="flex items-center gap-4 p-5 rounded-2xl bg-dark-900 border border-gold-500/30 hover:border-gold-500 transition-all group">
+                                <div class="w-14 h-14 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl group-hover:bg-gold-500 group-hover:text-dark-950 transition-colors">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 uppercase font-semibold block">Correo Electrónico</span>
+                                    <span class="text-base font-bold text-white group-hover:text-gold-400 transition-colors break-all">Wolves.Juvenil25@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <!-- Location Card -->
+                            <div class="flex items-center gap-4 p-5 rounded-2xl bg-dark-900 border border-gold-500/30">
+                                <div class="w-14 h-14 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 uppercase font-semibold block">Sede de Entrenamiento</span>
+                                    <span class="text-base font-bold text-white">Suba - Sector Bilbao (Bogotá D.C.)</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Pre-registration Form -->
+                    <div class="lg:col-span-7 bg-dark-900 p-8 sm:p-10 rounded-3xl border border-gold-500/30 shadow-2xl relative">
+                        <h3 class="text-2xl font-bold text-white font-heading uppercase mb-2">Formulario de Pre-Inscripción</h3>
+                        <p class="text-slate-400 text-xs mb-6">Completa los datos del deportista y acudiente para ponernos en contacto inmediato.</p>
+
+                        <form id="enrollment-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="acudiente" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Nombre del Acudiente</label>
+                                    <input type="text" id="acudiente" required class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-dark-700 text-white focus:outline-none focus:border-gold-500 text-sm" placeholder="Ej: Maria Rodríguez">
+                                </div>
+                                <div>
+                                    <label for="deportista" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Nombre del Deportista</label>
+                                    <input type="text" id="deportista" required class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-dark-700 text-white focus:outline-none focus:border-gold-500 text-sm" placeholder="Ej: Juan Esteban">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="edad" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Edad del Deportista</label>
+                                    <select id="edad" required class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-dark-700 text-white focus:outline-none focus:border-gold-500 text-sm">
+                                        <option value="">Selecciona la edad</option>
+                                        <option value="5-8">5 a 8 Años (Semillero)</option>
+                                        <option value="9-13">9 a 13 Años (Desarrollo)</option>
+                                        <option value="14-19">14 a 19 Años (Juvenil)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="telefono" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Teléfono / WhatsApp</label>
+                                    <input type="tel" id="telefono" required class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-dark-700 text-white focus:outline-none focus:border-gold-500 text-sm" placeholder="Ej: 3001234567">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="servicio" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Programa de Interés</label>
+                                <select id="servicio" class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-dark-700 text-white focus:outline-none focus:border-gold-500 text-sm">
+                                    <option value="Formación General">Formación Deportiva y Entrenamiento (3 días/sem)</option>
+                                    <option value="Torneos">Participación en Torneos y Competencias</option>
+                                    <option value="Vacacional">Programa Vacacional</option>
+                                    <option value="Personalizado">Entrenamiento Personalizado</option>
+                                    <option value="Acondicionamiento">Acondicionamiento Físico Deportivo</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="observaciones" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Observaciones o Preguntas</label>
+                                <textarea id="observaciones" rows="3" class="w-full px-4 py-3 rounded-xl bg-dark-800 border border-dark-700 text-white focus:outline-none focus:border-gold-500 text-sm resize-none" placeholder="¿Experiencia previa, alguna inquietud específica?..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl gold-bg-gradient text-dark-950 font-black text-sm uppercase shadow-lg shadow-gold-500/20 hover:scale-[1.01] transition-all">
+                                Enviar Solicitud por WhatsApp
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 text-slate-400 py-12 border-t border-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-dark-800">
+                
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <svg viewBox="0 0 200 200" class="w-full h-full">
+                            <path d="M100 10 L170 40 L160 140 L100 185 L40 140 L30 40 Z" fill="#0D0F14" stroke="#D4AF37" stroke-width="6"/>
+                            <polygon points="100,45 120,75 145,65 130,105 100,135 70,105 55,65 80,75" fill="#D4AF37"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-lg font-black text-white font-heading tracking-wider block">WOLVES JUVENIL S.A.S</span>
+                        <span class="text-xs text-gold-400">Forjando talento, liderando el futuro.</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-300">
+                    <a href="#inicio" class="hover:text-gold-400">Inicio</a>
+                    <a href="#nosotros" class="hover:text-gold-400">Nosotros</a>
+                    <a href="#servicios" class="hover:text-gold-400">Servicios</a>
+                    <a href="#categorias" class="hover:text-gold-400">Categorías</a>
+                    <a href="#contacto" class="hover:text-gold-400">Contacto</a>
+                </div>
+
+                <div class="flex items-center gap-4 text-gold-400 text-lg">
+                    <a href="https://wa.me/573222189471" target="_blank" aria-label="WhatsApp" class="hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:Wolves.Juvenil25@gmail.com" aria-label="Correo" class="hover:text-white transition-colors"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 Wolves Juvenil S.A.S. Todos los derechos reservados. Bogotá, Colombia.</p>
+                <p>Sede Suba Bilbao - Formación Deportiva Integral</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Logic -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Tabs Logic for Services
+        const serviceBtns = document.querySelectorAll('.service-tab-btn');
+        const serviceBlocks = document.querySelectorAll('.service-content-block');
+
+        serviceBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Reset all buttons
+                serviceBtns.forEach(b => {
+                    b.classList.remove('bg-gold-500', 'text-dark-950', 'shadow-lg', 'shadow-gold-500/20');
+                    b.classList.add('bg-dark-800', 'text-slate-300');
+                });
+
+                // Activate clicked button
+                btn.classList.add('bg-gold-500', 'text-dark-950', 'shadow-lg', 'shadow-gold-500/20');
+                btn.classList.remove('bg-dark-800', 'text-slate-300');
+
+                // Hide all content blocks
+                serviceBlocks.forEach(block => block.classList.add('hidden'));
+
+                // Show target content
+                const targetId = btn.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+            });
+        });
+
+        // Enrollment Form redirect to WhatsApp
+        const enrollmentForm = document.getElementById('enrollment-form');
+        enrollmentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const acudiente = document.getElementById('acudiente').value;
+            const deportista = document.getElementById('deportista').value;
+            const edad = document.getElementById('edad').value;
+            const telefono = document.getElementById('telefono').value;
+            const servicio = document.getElementById('servicio').value;
+            const observaciones = document.getElementById('observaciones').value;
+
+            const text = `Hola Wolves Juvenil S.A.S! Deseo realizar la pre-inscripción:\n\n` +
+                         `*Acudiente:* ${acudiente}\n` +
+                         `*Deportista:* ${deportista}\n` +
+                         `*Rango Edad:* ${edad}\n` +
+                         `*Teléfono:* ${telefono}\n` +
+                         `*Programa:* ${servicio}\n` +
+                         `*Observaciones:* ${observaciones || 'Sin observaciones'}`;
+
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/573222189471?text=${encodedText}`, '_blank');
+        });
+
+    </script>
+</body>
+</html>
